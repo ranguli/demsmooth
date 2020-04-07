@@ -1,14 +1,14 @@
-CC			 = i686-pc-mingw32-gcc
-LD			 = i686-pc-mingw32-ld
+CC = gcc
+LD = ld 
 
-OBJS		+= smooth.o
+OBJS += smooth.o
 
-LIBS		+= -L../libdemo
-LIBS		+= -ldemo
+LIBS += -L ../libdemo -lm
+LIBS += -ldemo
 
-CFLAGS		+= -I../libdemo/inc
-CFLAGS		+= -g
-CFLAGS		+= -O0
+CFLAGS += -I../libdemo/inc
+CFLAGS += -g -Wall -Wextra
+CFLAGS += -O0
 
 all: demsmooth.exe
 

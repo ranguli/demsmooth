@@ -103,8 +103,14 @@ int main(int argc, char *argv[])
     demo *demo;
     char *outname;
     char *inname;
-    dret_t dret;
-    flagfield readflags[]  = {{READFLAG_FILENAME, NULL},
+    int dret;
+
+    // Define an array of flags to tell libdemo what we want done to our
+    // demo file. Each flagfield struct consists of {*flag, *value}.
+    // We define a READFLAG_FILENAME of NULL because we're going to pass in
+    // a pointer instead of a filename. READFLAG_END is a predetermined size.
+
+    flagfield readflags[]  = {{READFLAG_FILENAME, NULL}, 
                               {READFLAG_END, READFLAG_END}};
     flagfield writeflags[] = {{WRITEFLAG_FILENAME, NULL},
                               {WRITEFLAG_REPLACE, NULL},
